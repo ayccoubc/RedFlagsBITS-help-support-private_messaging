@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if message %}
+    <p>{{ message }}</p>
+  {% else %}
+    <h2>Message to Physician</h2>
+    <form method="POST" action="/msg_physician">
+      <label for="doctor">Choose a doctor:</label>
+      <select name="doctor" id="doctor">
+        {% for doctor in doctors %}
+          <option value="{{ doctor }}">{{ doctor }}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+      <label for="message">Your message:</label><br>
+      <textarea name="message" id="message" rows="5" cols="50"></textarea>
+      <br><br>
+      <input type="submit" value="Send Message">
+    </form>
+  {% endif %}
+{% endblock %}

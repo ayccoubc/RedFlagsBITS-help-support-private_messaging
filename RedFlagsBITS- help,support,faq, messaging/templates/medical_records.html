@@ -1,0 +1,39 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+   <h1>Medical Records</h1>
+   {% if user %}
+       <h2>User Information</h2>
+       <p>Full Name: {{ user[1] }}</p>
+       <p>Age: {{ user[2] }}</p>
+       <p>Date of Birth (DOB): {{ user[3] }}</p>
+       <p>Contact Information: {{ user[4] }}</p>
+       <p>Emergency Contact: {{ user[5] }}</p>
+   {% else %}
+       <p>{{ message }}</p>
+   {% endif %}
+
+   <table>
+       <thead>
+           <tr>
+               <th>Medical History </th>
+               <th></th>
+           </tr>
+       </thead>
+       <tbody>
+           {% for record in medical_records %}
+               <tr>
+                   <td>{{ record[2] }}</td>
+                   <td>{{ record[3] }}</td>
+               </tr>
+           {% endfor %}
+       </tbody>
+   </table>
+
+   <form method="POST" action="/medical_records">
+       <label for="medical_problem">Medical Problem:</label>
+       <textarea id="medical_problem" name="medical_problem" required></textarea><br>
+
+       <input type="submit" value="Submit">
+   </form>
+{% endblock %}

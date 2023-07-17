@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Help</h1>
+    
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <form action="/help" method="POST">
+            <label for="help_option">Choose an issue:</label>
+            <select id="help_option" name="help_option">
+                <option value="" disabled selected>Select an option</option>
+                <option value="1">Difficulty accessing or logging into the website</option>
+                <option value="2">Slow page loading or unresponsive website</option>
+                <option value="3">Error messages or technical glitches</option>
+                <option value="4">Inaccurate or missing medical data on the website</option>
+                <option value="5">Issues with viewing or downloading medical records</option>
+                <option value="6">Problems with updating or editing personal information</option>
+                <option value="7">Confusing user interface or navigation</option>
+                <option value="8">Lack of multilingual support for non-English speakers</option>
+                <option value="9">Privacy concerns and data security issues</option>
+                <option value="10">Difficulty scheduling or managing appointments online</option>
+                <option value="11">Inadequate customer support or lack of response to inquiries</option>
+                <option value="12">Compatibility issues with specific browsers or devices</option>
+                <option value="13">Limited mobile responsiveness or functionality on smartphones or tablets</option>
+                <option value="14">Poorly organized or hard-to-find information on the website</option>
+                <option value="15">Inaccessible or improperly displayed medical images or test results</option>
+                <option value="16">Problems with prescription refill requests or medication management</option>
+                <option value="17">Billing or insurance-related issues on the website</option>
+                <option value="18">Unreliable notifications or reminders for healthcare-related updates</option>
+                <option value="19">Lack of user-friendly self-care resources or educational materials</option>
+                <option value="20">Inadequate integration with electronic health records (EHR) systems</option>
+                <option value="Other">Other</option>
+            </select>
+            <br>
+            <button type="submit" style="background-color: black; color: white; font-weight: bold; border-radius: 10px; border-width: 10px">Submit</button>
+        </form>
+        
+        {% if solution %}
+            <h6>{{ solution }}</h6>
+        {% endif %}
+    {% endif %}
+{% endblock %}

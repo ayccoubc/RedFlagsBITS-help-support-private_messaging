@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Back Pain</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Back_Pain_App.css')}}">
+    <script type="text/javascript" src="{{url_for('static', filename='js/Back_Pain_App.js')}}"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="home left_button" href="{{ url_for('index')}}">
+            Restart
+        </a>
+        <a class="home left_button" href="/medical_records">
+            Medical Records
+        </a>
+        <span class="title">Back Pain</span>
+        <div class="navbar-right">
+            <div class="dropdown">
+                <button class="dropbtn">Help and Support</button>
+                <div class="dropdown-content">
+                    <a href="/help">Help</a>
+                    <a href="/faq">FAQs</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">User Profile</button>
+                <div class="dropdown-content">
+                    <a href="/create_profile">Create Profile</a>
+                    <a href="/update_profile">Update Profile</a>
+                    <a href="/view_profile">View Profile</a>
+                    <a href="/msg_physician">Message your Physician</a>
+                </div>
+            </div>
+            <div class="gap"></div>
+            <a class="home" href="https://sites.google.com/view/mobilemskdemo/home">
+                Your Site
+            </a>
+        </div>
+        
+        <style>
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+            }
+            .navbar-right {
+                display: flex;
+                align-items: center;
+            }
+            .dropdown {
+                margin-left: 20px;
+            }
+            .gap {
+                width: 20px; /* Adjust the width as needed */
+            }
+        </style>
+    </nav>
+    <div class="main"><br><br>
+        {% block content %} {% endblock %}
+    </div>
+    
+</body>
+
+</html>

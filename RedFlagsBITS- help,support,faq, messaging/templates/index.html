@@ -1,0 +1,15 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+    <h2>{{ header_1 }}</h2>
+    <h4>{{ header_2 }}</h4>
+    <div style="display: inline-block">
+        <p style="max-width: 500px;">{{ explanation }}</p>
+    </div>
+    <form action="{{ url_for('red_flags_questionnaire') }}">
+        <button style="width:300px;" type="submit" class="default_button" id="list_parts">
+            Continue
+        </button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% if not search_bar_id %}
+    {% set search_bar_id = "search_bar_input" %}
+{% endif %}
+<form autocomplete="off" method="post">
+  <div class="autocomplete" style="width:300px;">
+    <input type="text" placeholder="{{search_bar_placeholder}}" value="{{search_bar_initial_value}}"
+        id="{{ search_bar_id }}" name="{{ search_bar_id }}" autofocus="autofocus">
+  </div>
+  <input type="submit">
+  {% if checkbox_name %}
+  <br>
+  <input type="checkbox" id="checkbox_input" name="checkbox_input" value="True">
+  <label for="checkbox_input">{{checkbox_name}}</label>
+  {% endif %}
+</form>
+{% if auto_complete_data %}
+    <script>
+      const auto_complete_data = {{ auto_complete_data|safe }};
+      autocomplete(document.getElementById("search_bar_input"), auto_complete_data);
+    </script>
+{% endif %}

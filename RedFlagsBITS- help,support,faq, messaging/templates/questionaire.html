@@ -1,0 +1,27 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+    <div style="display: flex; justify-content: center">
+    <form method="post">
+    {% for q in questions %}
+        <div style="text-align: left">
+            <h2>{{ q }}</h2>
+            {% for a in answers[q] %}
+                    <input type="radio" id="{{ a }}" name="{{ q }}" value="{{ a }}">
+                    <label for="{{ a }}">{{ a }}</label><br>
+            {% endfor %}
+        </div><br><br>
+    {% endfor %}
+
+    <input type="checkbox" name="terms_and_conditions" id="terms_and_conditions" onClick="Toggle_Enable_Submit('submit_button')">
+    <label for="terms_and_conditions">
+        I agree to <a href="{{ terms_conditions_url }}" target="_blank">Terms & Conditions</a>
+    </label><br>
+
+
+    <button style="width: 300px;" type="submit" class="default_button" disabled id="submit_button">Submit</button>
+    </form>
+    </div>
+    
+{% endblock %}

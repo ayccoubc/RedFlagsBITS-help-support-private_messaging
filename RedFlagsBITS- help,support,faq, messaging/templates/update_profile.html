@@ -1,0 +1,34 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+    <body>
+        <h1>Update Profile</h1>
+        {% if user %}
+            <form method="POST" action="/update_profile" enctype="multipart/form-data">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" value="{{ user[1] }}" required><br>
+    
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" value="{{ user[2] }}" required><br>
+    
+                <label for="dob">Date of Birth (DOB):</label>
+                <input type="text" id="dob" name="dob" value="{{ user[3] }}" required><br>
+    
+                <label for="contact">Contact Information:</label>
+                <input type="text" id="contact" name="contact" value="{{ user[4] }}" required><br>
+    
+                <label for="emergency_contact">Emergency Contact:</label>
+                <input type="text" id="emergency_contact" name="emergency_contact" value="{{ user[5] }}" required><br>
+
+                <label for="photo">Profile Photo:</label>
+                <input type="file" id="photo" name="photo" required><br>
+
+
+            
+    
+                <input type="submit" value="Update Profile">
+            </form>
+        {% else %}
+            <p>{{ message }}</p>
+        {% endif %}
+{% endblock %}

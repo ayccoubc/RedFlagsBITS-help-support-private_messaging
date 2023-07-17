@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Help Text</h1>
+    
+    <form action="/help_text" method="POST">
+        <label for="text">Enter your message:</label>
+        <textarea id="text" name="text" required></textarea>
+        <br>
+        <button type="submit" style="background-color: black; color: white; font-weight: bold; border-radius: 10px; border-width: 10px">Submit</button>
+    </form>
+{% endblock %}

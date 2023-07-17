@@ -1,0 +1,17 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+    <strong style="font-size:30px;">
+      <br>
+        Our quiz identified solutions for your pain.
+    <br>
+    </strong>  <br><br><br>
+
+    <a href="{{ diagnosis }}">Please use this link to learn more.</a>
+
+    <br><br>
+
+    <a href="{{ url_for('OSWENTRY_Low_Back_Pain_Questionaire') }}">Link to OSWENTRY Questionnaire</a>
+
+{% endblock %} 

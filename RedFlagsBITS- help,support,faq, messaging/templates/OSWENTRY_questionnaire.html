@@ -1,0 +1,18 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+    <div style="display: flex; justify-content: center">
+    <form method="post" action="{{ post_URL }}">
+    {% for q in questions %}
+        <div style="text-align: left">
+            <h2>{{ q[0] }}. {{ q[1] }}</h2>
+            {% for a in q[2:] %}
+                    <input type="radio" id="{{ a }}" name="{{ q[0] }}" value="{{ a }}">
+                    <label for="{{ a }}">{{ a }}</label><br>
+            {% endfor %}
+        </div><br><br>
+    {% endfor %}
+    <button style="width: 300px;" type="submit" class="default_button" id="submit_button">Submit</button>
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+
+/* Container and Squared Classes for the boxed data formats*/
+.container{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.squared-scroller{
+    box-sizing: border-box;
+    height: 544px;
+    overflow-y: auto;
+    border: 2px solid var(--reflex-blue);
+    padding: 5px;
+    margin: 5px;
+}
+
+div.squared{
+    /*display: flex;*/
+    border: 2px solid var(--reflex-blue);
+    padding: 5px;
+    margin: 5px;
+    width: 350px;
+    height: 70px;
+}
+div.squared_wide{
+    /*display: flex;*/
+    border: 2px solid var(--reflex-blue);
+    padding: 5px;
+    margin: 5px;
+    height: 70px;
+}
+div.squared2{
+    /*display: flex;*/
+    border: 2px solid var(--reflex-blue);
+    padding: 5px;
+    margin: 5px;
+    width: 350px;
+    height: 175px;
+}
+a.squared{
+    font-weight: var(--Medium);
+    color: black;
+    float: left;
+}
+
+div.squared_long{
+    /*display: flex;*/
+    border: 2px solid var(--reflex-blue);
+    padding: 5px;
+    margin: 5px;
+    width: 350px;
+}

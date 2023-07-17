@@ -1,0 +1,22 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+</head>
+<body>
+    <h1>View Profile</h1>
+    {% if user %}
+        <ul>
+            <li>Full Name: {{ user[1] }}</li>
+            <li>Age: {{ user[2] }}</li>
+            <li>Date of Birth (DOB): {{ user[3] }}</li>
+            <li>Contact Information: {{ user[4] }}</li>
+            <li>Emergency Contact: {{ user[5] }}</li>
+            {% if user[6] %}
+                <li>Profile Photo: <img src="/static/profile_photos/{{ user[6] }}" width="100" height="100"></li>
+            {% endif %}
+        </ul>
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+{% endblock %}
